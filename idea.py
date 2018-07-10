@@ -10,9 +10,6 @@ index = 0#input("Enter the index you would like to graph: ")
 # create dictionary to add lists of values to
 indexValues = {}
 
-#create list for dictionary values
-lst = []
-
 #create lists to add data to
 data_input =[]
 data_input2 = []
@@ -43,13 +40,13 @@ for item in data_input2:
 # print (data_input2)
 
 #iterate through list of given data
-for i in data_input:
-    if i[index] in indexValues:
+for i in range(len(data_input)):
+    if data_input[i][index] in indexValues:
         # append the corresponding value over in the other matrix
-        indexValues[i[index]] = lst.append(data_input2[index])
+        indexValues[data_input[i][index]].append(data_input2[index])
     else:
         #add the value to the list with identifier j[d] in the dictionary
-        indexValues[i[index]] = [data_input2[index]]
+        indexValues[data_input[i][index]] = [data_input2[i]]
 
 # now you should have the dictionary of identifiers with lists of values
 print (indexValues)
