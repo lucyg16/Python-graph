@@ -50,16 +50,28 @@ for i in range(len(data_input)):
 
 # now you should have the dictionary of identifiers with lists of values
 print (indexValues)
-
-# now make a box plot using the code provieded on matplotlib, replacing the input with the dictionary that you have created
+################################################################################################################
+#code from matplotlib begins here
 fig, axes = plt.subplots()
 
+
+
 # generate some random test data
-all_data = [np.random.normal(0, std, 100) for std in range(6, 10)]
+all_data = indexValues['11']
+# all_data = [np.random.normal(0, 12) in range(len(data_input))]
+# .   range(len(indexValues[index])) .....
+print (all_data)
+
+
 
 # plot box plot
 axes.boxplot(all_data)
-axes.set_title('Box plot')
+
+
+
+################################################################################################################
+#set date
+axes.set_title('Box plot for Wissam')
 
 # adding horizontal grid lines
 axes.yaxis.grid(True)
