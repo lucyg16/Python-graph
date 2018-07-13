@@ -39,7 +39,8 @@ flier_low = [-24.79157587]
 d2 = np.concatenate((spread, center, flier_high, flier_low), 0)
 # for i in range(len(lst)):
 
-d3= [5, 34 ,5 , 23, 5 ,7 ,5 ,32,3 ,34, 34, 3]
+d3= [[2], [2], [3]]
+# [5, 34 ,5 , 23, 5 ,7 ,5 ,32,3 ,34, 34, 3]
 print d3
 
 
@@ -50,3 +51,8 @@ ax7 = plt.subplots() #shows the extra little tick marks
 plt.boxplot(data)
 
 plt.show()
+
+
+
+
+

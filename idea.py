@@ -11,8 +11,8 @@ index = 0#input("Enter the index you would like to graph: ")
 indexValues = {}
 
 #create lists to add data to
-data_input =[]
-data_input2 = []
+data_input =[] #the matrix
+data_input2 = [] #the vector
 
 #read the input file data
 with open (inputFile, 'rb') as csvfile:
@@ -36,10 +36,7 @@ for item in data_input2:
 	for i in range(len(item)):
 		item[i] = item[i].replace(" ","")
 
-# print (data_input)
-# print (data_input2)
-
-#iterate through list of given data
+#iterate through list of given data to add to dictionary indexValues
 for i in range(len(data_input)):
     if data_input[i][index] in indexValues:
         # append the corresponding value over in the other matrix
@@ -49,10 +46,34 @@ for i in range(len(data_input)):
         indexValues[data_input[i][index]] = [data_input2[i]]
 
 # now you should have the dictionary of identifiers with lists of values
-print (indexValues)
+# print (indexValues)
 ################################################################################################################
-for item in indexValues:
-	print item
+
+#create empty array to store arrays of data to plot
+all_data = []
+
+#convert all values in the dictionary from string to int
+for key in indexValues:
+
+    # print(myDict[key])
+
+    #flat list from list of lists
+    flat_list = []
+    for sublist in indexValues[key]:
+       for item in sublist:
+           flat_list.append(item)
+
+    testArrays = [int(i) for i in flat_list]
+    all_data.append(testArrays)
+
+
+ax7 = plt.subplots() #shows the extra little tick marks
+plt.boxplot(all_data)
+plt.title('Box plot for Wissam')
+
+plt.show()
+
+
 
 
 ######below is all commented out
