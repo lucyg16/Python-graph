@@ -1,14 +1,3 @@
-# from matplotlib import pyplot as pyplot
-# import numpy as np
-# from array import array
-
-# tree = [1, 3, 4 ,2 ,3 ,4 ,4]
-# intarray = array(tree)
-# print intarray
-
-# plt.boxplot(intarray)
-
-
 import csv
 import numpy as np
 from matplotlib import pyplot as plt
@@ -18,14 +7,12 @@ inputFile = 'data.txt'#raw_input("Enter the name of your input file: ")
 inputFileNum = 'data2.txt'#raw_input("Enter the name of the file with corresponding values: ")
 index = 0#input("Enter the index you would like to graph: ")
 
-
 # create dictionary to add lists of values to
 indexValues = {}
-# indexValues = containers.Map('KeyType','double','ValueType','any');
 
 #create lists to add data to
-data_input =[]
-data_input2 = []
+data_input =[] #the matrix
+data_input2 = [] #the vector
 
 #read the input file data
 with open (inputFile, 'rb') as csvfile:
@@ -49,23 +36,23 @@ for item in data_input2:
 	for i in range(len(item)):
 		item[i] = item[i].replace(" ","")
 
-# print (data_input)
-# print (data_input2)
-
-
-#iterate through list of given data
+#iterate through list of given data to add to dictionary indexValues
 for i in range(len(data_input)):
     if data_input[i][index] in indexValues:
         # append the corresponding value over in the other matrix
-        indexValues[data_input[i][index]].append(data_input2[index])
+        indexValues[data_input[i][index]].append(data_input2[i])
     else:
         #add the value to the list with identifier j[d] in the dictionary
         indexValues[data_input[i][index]] = [data_input2[i]]
 
 # now you should have the dictionary of identifiers with lists of values
+print (indexValues)
+################################################################################################################
 
+#create empty array to store arrays of data to plot
 all_data = []
 
+#convert all values in the dictionary from string to int
 for key in indexValues:
 
     # print(myDict[key])
@@ -77,14 +64,46 @@ for key in indexValues:
            flat_list.append(item)
 
     testArrays = [int(i) for i in flat_list]
-    print (testArrays)
     all_data.append(testArrays)
-print (all_data)
 
 
-data = all_data
+x_values = [11, 10, 13, 12, 15, 14]
+y_values = all_data
 
-ax7 = plt.subplots() #shows the extra little tick marks
-plt.boxplot(data)
+plt.boxplot(y_values)
+
+# x axis label
+# xticks= (range(len(all_data))+1, [x_values])
+xticks= ([x_values])
+
+
+
+plt.title('Box plot for Wissam by me')
+
+plt.grid(True)
+plt.xlabel('Values with index '+ str(index))
+plt.ylabel('Values corresponding to index '+ str(index))
 
 plt.show()
+
+
+
+
+######below is all commented out
+
+# #code from matplotlib begins here
+
+# # adding horizontal grid lines
+# axes.yaxis.grid(True)
+# axes.set_xticks([y + 1 for y in range(len(all_data))])
+
+# # add x-tick labels
+# plt.setp(axes, xticks=[y + 1 for y in range(len(all_data))],
+#          xticklabels=['x1', 'x2', 'x3', 'x4'])
+# plt.show()
+
+
+
+
+
+
