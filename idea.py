@@ -51,38 +51,47 @@ for i in range(len(data_input)):
 # now you should have the dictionary of identifiers with lists of values
 print (indexValues)
 ################################################################################################################
-#code from matplotlib begins here
-fig, axes = plt.subplots()
+for item in indexValues:
+	print item
+
+
+######below is all commented out
+
+# #code from matplotlib begins here
+# fig, axes = plt.subplots()
 
 
 
-# generate some random test data
-all_data = indexValues['11']
-# all_data = [np.random.normal(0, 12) in range(len(data_input))]
-# .   range(len(indexValues[index])) .....
-print (all_data)
+# # generate some random test data
+# all_data = indexValues['11']
+
+# # all_data = [np.random.normal(0, 12) in range(len(data_input))]
+
+
+# # .   range(len(indexValues[index])) .....
+# print (all_data)
 
 
 
-# plot box plot
-axes.boxplot(all_data)
+# # plot box plot
+# axes.boxplot(all_data)
 
 
 
-################################################################################################################
-#set date
-axes.set_title('Box plot for Wissam')
+# ################################################################################################################
+# #set date
+# axes.set_title('Box plot for Wissam')
 
-# adding horizontal grid lines
-axes.yaxis.grid(True)
-axes.set_xticks([y + 1 for y in range(len(all_data))])
-axes.set_xlabel('Values with index '+ str(index))
-axes.set_ylabel('Values corresponding to index '+ str(index))
+# # adding horizontal grid lines
+# axes.yaxis.grid(True)
+# axes.set_xticks([y + 1 for y in range(len(all_data))])
+# axes.set_xlabel('Values with index '+ str(index))
+# axes.set_ylabel('Values corresponding to index '+ str(index))
 
-# add x-tick labels
-plt.setp(axes, xticks=[y + 1 for y in range(len(all_data))],
-         xticklabels=['x1', 'x2', 'x3', 'x4'])
-plt.show()
+# # add x-tick labels
+# plt.setp(axes, xticks=[y + 1 for y in range(len(all_data))],
+#          xticklabels=['x1', 'x2', 'x3', 'x4'])
+# plt.show()
 
 
 

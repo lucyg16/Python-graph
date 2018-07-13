@@ -46,7 +46,7 @@ print d3
 # data.shape = (-1, 1)
 # d2.shape = (-1, 1)
 data = [data, d2, d3]
-ax7 = plt.subplots()
+ax7 = plt.subplots() #shows the extra little tick marks
 plt.boxplot(data)
 
 plt.show()
