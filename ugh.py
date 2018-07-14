@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+from collections import OrderedDict
 from matplotlib import pyplot as plt
 
 # ask user for input files of data and index
@@ -8,7 +9,7 @@ inputFileNum = 'data2.txt'#raw_input("Enter the name of the file with correspond
 index = 0#input("Enter the index you would like to graph: ")
 
 # create dictionary to add lists of values to
-indexValues = {}
+indexValues = OrderedDict()
 
 #create lists to add data to
 data_input =[] #the matrix
@@ -69,14 +70,17 @@ for key in indexValues:
 
 x_values = [11, 10, 13, 12, 15, 14]
 y_values = all_data
+# print(x_values, y_values, indexValues.keys())
+plt.boxplot(y_values, positions=x_values)
+#######################
 
-plt.boxplot(y_values)
 
 # x axis label
 # xticks= (range(len(all_data))+1, [x_values])
-xticks= ([x_values])
+my_xticks= x_values
 
-
+plt.xticks(my_xticks)
+#######################
 
 plt.title('Box plot for Wissam by me')
 
