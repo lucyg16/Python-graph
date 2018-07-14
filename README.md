@@ -7,4 +7,6 @@ Monitor which values produce the best results using boxplots
 3. run $ python app.py
 
 ## Notice
-Pay attention to the path specified (must be a local file)
+- Pay attention to the path specified (must be a local file)
+- data.txt and data2.txt are hard-coded numbers to test the app with (no need to do anything with them)
+
