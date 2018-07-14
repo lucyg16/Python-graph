@@ -4,9 +4,9 @@ from matplotlib import pyplot as plt
 from collections import OrderedDict
 
 # ask user for input files of data and index
-inputFile = 'data.txt'#raw_input("Enter the name of your input file: ")
-inputFileNum = 'data2.txt'#raw_input("Enter the name of the file with corresponding values: ")
-index = 0#input("Enter the index you would like to graph: ")
+inputFile = raw_input("Enter the name of your input file: ") #ex: data.txt
+inputFileNum = raw_input("Enter the name of the file with corresponding values: ") #ex: data2.txt
+index = input("Enter the index you would like to graph: ")
 
 # create dictionary to add lists of values to
 indexValues = {}
