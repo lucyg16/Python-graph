@@ -77,7 +77,7 @@ for key in sorted_indexValues:
 plt.boxplot(all_data, positions=x_values_keys)
 
 # boxplot title
-plt.title('Box plot for Wissam by me')
+plt.title('Box plot')
 
 # add grid marks and labels
 plt.grid(True)
